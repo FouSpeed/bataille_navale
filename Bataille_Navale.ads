@@ -1,6 +1,8 @@
 package Bataille_Navale is
+   type Plateau is private;
 
    Taille : constant := 10;
+   Placement_Invalide : exception;
 
    subtype Ligne is Character range 'A' .. 'J';
    subtype Colonne is Positive range 1 .. Taille;
@@ -9,6 +11,8 @@ package Bataille_Navale is
       L : Ligne;
       C : Colonne;
    end record;
+
+    
 
    type Type_Navire is 
       (Porte_Avions,
@@ -30,6 +34,8 @@ package Bataille_Navale is
    type Camp is (Humain, Ordinateur);
    
    function Adversaire (C : Camp) return Camp;
+   function Peut_Placer(P : Plateau; Navire : Type_Navire; coord : Coordonnee; O : Orientation ) return Boolean;
+   
 
 end Bataille_Navale;
 
