@@ -9,4 +9,6 @@ package body Bataille_Navale is
       end if;
    end Adversaire;
 
+   function Est_Place(P: Plateau; Navire: Type_Navire) return Boolean is
+      
 end Bataille_Navale;

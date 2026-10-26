@@ -1,8 +1,7 @@
 package Bataille_Navale is
-   type Plateau is private;
-
+   
    Taille : constant := 10;
-   Placement_Invalide : exception;
+   
 
    subtype Ligne is Character range 'A' .. 'J';
    subtype Colonne is Positive range 1 .. Taille;
@@ -34,8 +33,36 @@ package Bataille_Navale is
    type Camp is (Humain, Ordinateur);
    
    function Adversaire (C : Camp) return Camp;
-   function Peut_Placer(P : Plateau; Navire : Type_Navire; coord : Coordonnee; O : Orientation ) return Boolean;
    
+   type Plateau is private;
+   Placement_Invalide : exception;
+
+   function Peut_Placer(P : Plateau; Navire : Type_Navire; origine : Coordonnee; sens : Orientation ) return Boolean;
+   function Est_Place(P: Plateau; Navire: Type_Navire) return Boolean;
+   function Flotte_Complete(P: Plateau) return Boolean;
+   procedure Placer(P : in out Plateau; Navire : in Type_Navire; origine : in Coordonnee ; sens : in Orientation);
+
+
+   private
+
+   type Case_grille is record
+      Occupee : Boolean := False;
+      Navire : Type_Navire := Type_Navire'First;
+   end record;
+   
+   type Grille is array (Ligne,Colonne) of Case_grille;
+
+   type Etat_Navire is record
+      Place : Boolean := False;
+   end record;
+
+   type Flotte is array (Type_Navire) of Etat_Navire;
+
+   type Plateau is record
+      Cases : Grille;
+      Navires : Flotte;
+   end record;
+
 
 end Bataille_Navale;
 
