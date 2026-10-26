@@ -4,6 +4,7 @@ with Bataille_Navale; use Bataille_Navale;
 
 procedure test_etape1 is
    Total : Integer := 0;
+   X : Colonne := 11;
 begin
    for Navire in Type_Navire loop
       Put_Line (Type_Navire'Image(Navire) & " : " & Integer'Image(Longueur(Navire)));
