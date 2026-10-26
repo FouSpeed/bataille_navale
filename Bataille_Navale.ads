@@ -9,7 +9,7 @@ package Bataille_Navale is
       L : Ligne;
       C : Colonne;
    end record;
-   
+
    type Type_Navire is 
       (Porte_Avions,
       Croiseur,
