@@ -1,0 +1,40 @@
+V "GNAT Lib v16"
+A -gnat2012
+A -gnatc
+A -mtune=generic
+A -march=x86-64
+P NO
+
+RN
+RV NO_ELABORATION_CODE
+
+U bataille_navale%s	bataille_navale.ads	dae50654 EE OO PK
+
+D bataille_navale.ads	20261026120814 dae50654 bataille_navale%s
+D system.ads		20260430083320 898beeee system%s
+G a Z
+X 1 bataille_navale.ads
+1K9*Bataille_Navale 28l5 28e20
+3N4*Taille 6r43
+5E12*Ligne{character} 9r10
+6I12*Colonne{positive} 10r10
+8R9*Coordonnee 11e14
+9e7*L{5E12}
+10i7*C{6I12}
+12E9*Type_Navire 12e91 16r31
+12n25*Porte_Avions{12E9} 17r7
+12n39*Croiseur{12E9} 18r7
+12n49*Contre_Torpilleur{12E9} 19r7
+12n68*Sous_Marin{12E9} 20r7
+12n80*Torpilleur{12E9} 21r7
+13E9*Orientation 13e48
+13n25*Horizontale{13E9}
+13n38*Verticale{13E9}
+14I12*Longueur_Navire{positive}
+16a4*Longueur(integer)
+24E9*Camp 24e37 26r33 26r46
+24n18*Humain{24E9}
+24n26*Ordinateur{24E9}
+26V13*Adversaire{24E9} 26>25
+26e25 camp1{24E9}
+
